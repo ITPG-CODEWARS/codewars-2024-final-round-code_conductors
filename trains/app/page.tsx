@@ -7,6 +7,7 @@ export default function Home() {
   const [qrCode, setQrCode] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [qrInfo, setQrInfo] = useState<string | null>("");
 
   useEffect(() => {
     // Sample data for the ticket request
@@ -46,6 +47,25 @@ export default function Home() {
     fetchQrCode();
   }, []);
 
+  useEffect(() => {
+    const fetchQRData = async () => {
+      try {
+        const response = await axios.get("http://127.0.0.1:5000/ticket_info", {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        console.log(response.data);
+        setQrInfo(response.data);
+      } catch (err) {
+        console.error("Error fetching ticket info", err);
+        setError("Error fetching ticket information.");
+      }
+    };
+
+    fetchQRData();
+  }, []);
+
   return (
     <div className="w-screen h-dvh">
       <div className="w-full">
@@ -58,6 +78,22 @@ export default function Home() {
         {qrCode ? (
           <img src={qrCode} alt="Ticket QR Code" className="w-64 h-64" />
         ) : null}
+      </div>
+
+      <div className="mt-8 px-4">
+        {qrInfo ? (
+          <div>
+            <h2 className="text-xl font-bold">Ticket Information</h2>
+            <p><strong>Coupe:</strong> {qrInfo.coupe}</p>
+            <p><strong>Seat:</strong> {qrInfo.seat}</p>
+            <p><strong>Wagon:</strong> {qrInfo.wagon}</p>
+            <p><strong>Platform:</strong> {qrInfo.platform}</p>
+            <p><strong>Departure Time:</strong> {qrInfo.departure_time}</p>
+            <p><strong>Arrival Time:</strong> {qrInfo.arrival_time}</p>
+          </div>
+        ) : (
+          <p>Loading ticket information...</p>
+        )}
       </div>
     </div>
   );
