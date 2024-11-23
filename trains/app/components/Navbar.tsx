@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Navbar() {
     return (
-        <div className="w-full h-fit bg-blue-500 flex justify-around items-center navbar bg-base-100">
+        <div className="w-full h-fit bg-blue-500 flex justify-between items-center navbar">
             <div className="navbar-start">
                 <div className="dropdown text-white">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -33,18 +33,19 @@ export default function Navbar() {
                         <li><a>Разсписание</a></li>
                     </ul>
                 </div>
-                <Link href="/">
+            </div>
+            <div className="w-full">
+            <Link href="/">
                     <p className="btn btn-ghost text-center text-xl text-white">Точен Влак</p>
                 </Link>
-                
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
+                <ul className="menu menu-horizontal text-white px-1">
                     <li><a>Item 1</a></li>
                     <li>
                         <details>
                             <summary>Parent</summary>
-                            <ul className="p-2">
+                            <ul className="p-2 text-black">
                                 <li><a>Submenu 1</a></li>
                                 <li><a>Submenu 2</a></li>
                             </ul>
