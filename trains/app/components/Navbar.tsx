@@ -2,9 +2,9 @@ import Image from "next/image";
 
 export default function Navbar() {
     return (
-        <div className="w-full h-fit flex justify-around items-center navbar bg-base-100">
+        <div className="w-full h-fit bg-blue-500 flex justify-around items-center navbar bg-base-100">
             <div className="navbar-start">
-                <div className="dropdown">
+                <div className="dropdown text-white">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -21,19 +21,19 @@ export default function Navbar() {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                        <li><a>Item 1</a></li>
+                        className="menu menu-sm dropdown-content bg-base-100 text-black rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                        <li><a>Начало</a></li>
                         <li>
-                            <a>Parent</a>
-                            <ul className="p-2">
-                                <li><a>Submenu 1</a></li>
-                                <li><a>Submenu 2</a></li>
+                            <a>Билети</a>
+                            <ul className="p-1">
+                                <li><a>Купи</a></li>
+                                <li><a>Мои</a></li>
                             </ul>
                         </li>
-                        <li><a>Item 3</a></li>
+                        <li><a>Разсписание</a></li>
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">Точен Влак</a>
+                <a className="btn btn-ghost text-center text-xl text-white">Точен Влак</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -64,12 +64,11 @@ export default function Navbar() {
                     className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                     <li>
                         <a className="justify-between">
-                            Profile
-                            <span className="badge">New</span>
+                            Профил
                         </a>
                     </li>
-                    <li><a>Settings</a></li>
-                    <li><a>Logout</a></li>
+                    <li><a>Настройки</a></li>
+                    <li><a>Излез</a></li>
                 </ul>
             </div>
         </div>
