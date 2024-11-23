@@ -13,7 +13,7 @@ cipher = Fernet(encryption_key)
 def buy_ticket():
     # Simulate getting ticket data from the request
     ticket_data = request.json
-    required_fields = ['coupe', 'seat', 'wagon', 'platform', 'departure_time', 'arrival_time']
+    required_fields = ['coupe', 'seat', 'wagon', 'platform', 'departure_time', 'arrival_time', 'user']
     
     if not all(field in ticket_data for field in required_fields):
         return jsonify({"error": "Missing required fields"}), 400
@@ -21,7 +21,9 @@ def buy_ticket():
     # Encrypt ticket information
     plain_text_data = f"Coupe: {ticket_data['coupe']}, Seat: {ticket_data['seat']}, Wagon: {ticket_data['wagon']}, " \
                       f"Platform: {ticket_data['platform']}, Departure: {ticket_data['departure_time']}, " \
-                      f"Arrival: {ticket_data['arrival_time']}"
+                      f"Arrival: {ticket_data['arrival_time']}" \
+                      f"User: {ticket_data['user']}"
+    
     encrypted_data = cipher.encrypt(plain_text_data.encode())
 
     # Generate a QR code
@@ -49,7 +51,8 @@ def get_ticket_info():
         "departure_time": "10:30",
         "arrival_time": "14:00",
         "is_delayed": True,
-        "delay_minutes": 15
+        "delay_minutes": 15,
+        "user": "Georgi Georgiev"
     }
 
     # Return the hardcoded ticket information as JSON
