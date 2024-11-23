@@ -95,14 +95,14 @@ export default function Home() {
       <div className="mt-8 px-4">
         {qrInfo ? (
           <div>
-            <h2 className="text-xl font-bold">Ticket Information</h2>
-            <p><strong>Coupe:</strong> {qrInfo.coupe}</p>
-            <p><strong>Seat:</strong> {qrInfo.seat}</p>
-            <p><strong>Wagon:</strong> {qrInfo.wagon}</p>
-            <p><strong>Platform:</strong> {qrInfo.platform}</p>
-            <p><strong>Departure Time:</strong> {qrInfo.departure_time}</p>
-            <p><strong>Arrival Time:</strong> {qrInfo.arrival_time}</p>
-            <p><strong>User:</strong>{qrInfo.user}</p>
+            <h2 className="text-xl font-bold">Билет</h2>
+            <p><strong>Купе:</strong> {qrInfo.coupe}</p>
+            <p><strong>Място:</strong> {qrInfo.seat}</p>
+            <p><strong>Вагон:</strong> {qrInfo.wagon}</p>
+            <p><strong>Платформа:</strong> {qrInfo.platform}</p>
+            <p><strong>Тръгва:</strong> {qrInfo.departure_time}</p>
+            <p><strong>Пристига:</strong> {qrInfo.arrival_time}</p>
+            <p><strong>Потребител:</strong>{qrInfo.user}</p>
           </div>
         ) : (
           <p>Loading ticket information...</p>
