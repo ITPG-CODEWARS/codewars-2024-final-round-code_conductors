@@ -34,7 +34,7 @@ export default function Navbar() {
                     </ul>
                 </div>
                 <Link href="/">
-                    <p className="btn btn-ghost text-center text-xl text-white">Точен Влак</a>
+                    <p className="btn btn-ghost text-center text-xl text-white">Точен Влак</p>
                 </Link>
                 
             </div>

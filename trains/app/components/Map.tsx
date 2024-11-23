@@ -1,8 +1,10 @@
 "use client";
 import { useEffect } from "react";
 
+// Declaring the global google object type for TypeScript
 declare global {
   interface Window {
+    google: typeof google;
     initMap: () => void;
   }
 }
@@ -14,13 +16,15 @@ const Map: React.FC = () => {
     script.async = true;
     script.defer = true;
 
+    // Assign the initMap function to window so the Google Maps API can call it once loaded
     window.initMap = () => {
-      const map = new google.maps.Map(document.getElementById("map") as HTMLElement, {
+      const map = new window.google.maps.Map(document.getElementById("map") as HTMLElement, {
         center: { lat: -34.397, lng: 150.644 },
         zoom: 8,
       });
     };
 
+    // Append the script to the document to load Google Maps
     document.head.appendChild(script);
 
     return () => {
