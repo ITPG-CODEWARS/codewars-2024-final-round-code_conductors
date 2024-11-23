@@ -9,20 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "@react-google-maps/api": "^2.20.3",
-    "leaflet": "^1.9.4",
-    "next": "15.0.3",
-    "react": "^19.0.0-rc-66855b96-20241106",
-    "react-dom": "^19.0.0-rc-66855b96-20241106"
-=======
     "axios": "^1.7.7",
     "next": "15.0.3",
     "qrcode.react": "^4.1.0",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-dom": "19.0.0-rc-66855b96-20241106",
     "react-qr-reader": "^3.0.0-beta-1"
->>>>>>> 1945c28e92f06b22956b952c72429680fba49c83
   },
   "devDependencies": {
     "@types/node": "^20",

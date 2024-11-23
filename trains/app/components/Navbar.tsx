@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Navbar() {
     return (
@@ -22,7 +23,6 @@ export default function Navbar() {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 text-black rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                        <li><a>Начало</a></li>
                         <li>
                             <a>Билети</a>
                             <ul className="p-1">
@@ -33,7 +33,10 @@ export default function Navbar() {
                         <li><a>Разсписание</a></li>
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-center text-xl text-white">Точен Влак</a>
+                <Link href="/">
+                    <p className="btn btn-ghost text-center text-xl text-white">Точен Влак</a>
+                </Link>
+                
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
