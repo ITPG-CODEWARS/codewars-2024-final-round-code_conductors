@@ -1,7 +1,8 @@
 import Navbar from "./components/Navbar";
-import Map from "./components/Map";
 import Buttons from "./components/buttons";
-
+import image from "@/public/mapEN_big.gif"
+import Image from "next/image";
+import Hero from "./components/hero";
 
 
 export default function Home() {
@@ -13,10 +14,10 @@ export default function Home() {
         <Navbar />
       </div>
       <div>
-        <Map/>
+        <Hero/>
       </div>
-      <div className="w-full flex justify-center items-center">
-        <Buttons/>
+      <div>
+        <Image src={image.src} alt="image" width={500} height={500}/>
       </div>
     </div>
   );
